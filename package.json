@@ -7,6 +7,9 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "bootstrap": "^3.3.0",
+    "chart.js": "^4.4.3",
+    "ionicons": "^7.4.0",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
     "vuex": "^4.0.0"

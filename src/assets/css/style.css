@@ -1,0 +1,1280 @@
+/* =========== Google Fonts ============ */
+
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+
+
+/* =============== Globals ============== */
+
+/* CSS variables and light theme */
+* {
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    --blue: #060513;
+    --white: #dbdbdb;
+    --gray: #f5f5f5;
+    --black1: #512691;
+    --black2: #37a021;
+    background-color: var(--blue);
+    color: var(--dark-white);
+  }
+}
+
+/* Dark Theme Colors */
+:root {
+  /* Dark Theme Colors */
+  --dark-blue: #3d3d44; /* Sidebar and titles */
+  --dark-white: #000; /* Background */
+  --dark-gray: #000;
+  --dark-black1: #ffffff; /* Characters and words */
+  --dark-black2: #ffffff; /* Icons */
+}
+
+.dark-mode {
+  --blue: var(--dark-blue);
+  --white: var(--dark-white);
+  --gray: var(--dark-gray);
+  --black1: var(--dark-black1);
+  --black2: var(--dark-black2);
+  
+  background-color: var(--dark-blue); /* Optional: change the background of the entire page */
+  color: var(--dark-white); /* Optional: change the default text color */
+}
+
+body {
+
+  min-height: 100vh;
+
+  overflow-x: hidden;
+
+}
+
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+ 
+.container {
+
+  position: relative;
+
+  width: 100%;
+
+}
+.membership-page h1, .membership-page p {
+  display: grid;
+  padding: 20px; 
+  color: var(--blue); /* Example: Sets the color of all h1 and p tags within .membership-page to blue */
+}
+
+/* =============== Cards Membership ================ */
+.membership-card {
+  --primary-clr: var(--blue);
+  --dot-clr: #BBC0FF;
+  --play: hsl(195, 74%, 62%);
+  width: 300px;
+  height: 170px;
+  border-radius: 10px;
+  
+}
+.membership-card.work{
+  border-radius: 10px;
+}
+.membership-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start; /* Align items at the top */
+}
+
+.membership-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1; /* Take up available space */
+  gap: 50px; /* Adjust based on your design */
+}
+
+#addMembershipButton .button {
+    width: 260px;
+
+  background-color: var(--play); /* Example color */
+  color: var(--white); /* Text color */
+  width: 200px; /* Same width as the cards for consistency */
+  height: 250px; /* Adjust height as needed */
+  border-radius: 10px; /* Matching the card's border radius */
+  font-size: 16px; /* Text size */
+  border: none; /* Remove border */
+  cursor: pointer; /* Cursor indication for clickable element */
+  display: flex;
+  justify-content: center; /* Center the button text horizontally */
+  align-items: center; /* Center the button text vertically */
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all .3s ease; /* Smooth transition for interactions */
+}
+
+/* Adjust the hover state for visual feedback */
+#addMembershipButton:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Example shadow for hover effect */
+}
+
+
+.membership-card {
+  font-family: "Arial";
+  color: #fff;
+  display: grid;
+  cursor: pointer;
+  grid-template-rows: 50px 1fr;
+  position: relative;
+  padding: 20px; 
+  display: grid;
+  
+}
+
+.membership-card:hover .membership-img-section {
+  transform: translateY(1em);
+}
+
+.membership-card-desc {
+  border-radius: 10px;
+  padding: 15px;
+  position: relative;
+  top: -10px;
+  display: grid;
+  gap: 10px;
+  background: var(--primary-clr);
+}
+
+.membership-card-time {
+  font-size: 1.7em;
+  font-weight: 500;
+}
+
+.membership-img-section {
+  transition: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background: hsla(195, 74%, 62%, 0); /* Fully transparent */
+}
+.membershipColor {
+  border-radius: 10px;
+}
+
+
+.membership-card-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.membership-card-title {
+  flex: 1;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.membership-card-menu {
+  display: flex;
+  gap: 4px;
+  margin-inline: auto;
+}
+
+.membership-card svg {
+  float: right;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.membership-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--dot-clr);
+}
+
+.membership-card .membership-recent {
+  line-height: 0;
+  font-size: 0.8em;
+}
+.membership-img-section img {
+  max-width: 100%; /* Ensures the image is no wider than its container */
+  max-height: 100px; /* Adjust based on your design preference */
+  display: block; /* Removes extra space below the image */
+  object-fit: cover; /* Ensures the image covers the area, might crop it */
+  border-top-left-radius: 10px; /* Matches the card's top-left radius */
+  border-top-right-radius: 10px; /* Matches the card's top-right radius */
+}
+.add-membership-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-membership-button ion-icon {
+  font-size: inherit;
+}
+
+
+/* =============== Navigation ================ */
+
+.navigation {
+
+  position: fixed;
+
+  width: 300px;
+
+  height: 100%;
+
+  background: var(--blue);
+
+  border-left: 10px solid var(--blue);
+
+  transition: 0.5s;
+
+  overflow: hidden;
+
+}
+
+.navigation.active {
+
+  width: 80px;
+
+}
+.chart-container {
+  padding: 20px;
+  display: block;
+  box-sizing: border-box;
+  height: 300px; /* You can adjust the height as needed */
+  width: 100%; /* Make the width match the parent container */
+}
+
+.chart-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+.navigation ul {
+
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+}
+
+
+
+.navigation ul li {
+
+  position: relative;
+
+  width: 100%;
+
+  list-style: none;
+
+  border-top-left-radius: 30px;
+
+  border-bottom-left-radius: 30px;
+
+}
+
+
+
+
+.navigation ul li.hovered {
+
+  background-color: var(--white);
+
+}
+
+
+
+
+
+
+
+.navigation ul li a {
+
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+
+  display: flex;
+
+  text-decoration: none;
+
+  color: var(--white);
+
+}
+
+
+.navigation ul li.hovered a {
+
+  color: var(--blue);
+
+}
+
+
+
+.navigation ul li a .icon {
+
+  position: relative;
+
+  display: block;
+
+  min-width: 60px;
+
+  height: 60px;
+
+  line-height: 75px;
+
+  text-align: center;
+
+}
+
+.navigation ul li a .icon ion-icon {
+
+  font-size: 1.75rem;
+
+}
+
+
+
+.navigation ul li a .title {
+
+  position: relative;
+
+  display: block;
+
+  padding: 0 10px;
+
+  height: 60px;
+
+  line-height: 60px;
+
+  text-align: start;
+
+  white-space: nowrap;
+
+}
+
+
+
+/* --------- curve outside ---------- */
+
+
+.navigation ul li.hovered a::before {
+
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+
+  top: -50px;
+
+  width: 50px;
+
+  height: 50px;
+
+  background-color: transparent;
+
+  border-radius: 50%;
+
+  box-shadow: 35px 35px 0 10px var(--white);
+
+  pointer-events: none;
+
+}
+
+
+.navigation ul li.hovered a::after {
+
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+
+  bottom: -50px;
+
+  width: 50px;
+
+  height: 50px;
+
+  background-color: transparent;
+
+  border-radius: 50%;
+
+  box-shadow: 35px -35px 0 10px var(--white);
+
+  pointer-events: none;
+
+}
+
+
+
+/* ===================== Main ===================== */
+
+.main {
+
+  position: absolute;
+
+  width: calc(100% - 300px);
+
+  left: 300px;
+
+  min-height: 100vh;
+
+  background: var(--white);
+
+  transition: 0.5s;
+
+}
+
+.main.active {
+
+  width: calc(100% - 80px);
+
+  left: 80px;
+
+}
+
+
+
+.topbar {
+
+  width: 100%;
+
+  height: 60px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 0 10px;
+
+}
+
+
+
+.toggle {
+color: #000;
+  position: relative;
+
+  width: 60px;
+
+  height: 60px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  font-size: 2.5rem;
+
+  cursor: pointer;
+
+}
+
+
+
+.search {
+
+  position: relative;
+
+  width: 400px;
+
+  margin: 0 10px;
+
+}
+
+
+
+.search label {
+
+  position: relative;
+
+  width: 100%;
+
+}
+
+
+
+.search label input {
+
+  width: 100%;
+
+  height: 40px;
+
+  border-radius: 40px;
+
+  padding: 5px 20px;
+
+  padding-left: 35px;
+
+  font-size: 18px;
+
+  outline: none;
+
+  border: 1px solid var(--black2);
+
+}
+
+
+
+.search label ion-icon {
+
+  position: absolute;
+
+  top: 0;
+
+  left: 10px;
+
+  font-size: 1.2rem;
+
+}
+
+
+
+.user {
+
+  position: relative;
+
+  width: 40px;
+
+  height: 40px;
+
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+}
+
+
+
+.user img {
+
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+}
+
+
+
+/* ======================= Cards ====================== */
+
+.cardBox {
+
+  position: relative;
+
+  width: 100%;
+
+  padding: 20px;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  grid-gap: 30px;
+
+}
+
+
+
+.cardBox .card {
+
+  position: relative;
+
+  background: var(--white);
+
+  padding: 30px;
+
+  border-radius: 20px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  cursor: pointer;
+
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+
+}
+
+
+
+.cardBox .card .numbers {
+
+  position: relative;
+
+  font-weight: 500;
+
+  font-size: 2.5rem;
+
+  color: var(--blue);
+
+}
+
+
+
+.cardBox .card .cardName {
+
+  color: var(--black2);
+
+  font-size: 1.1rem;
+
+  margin-top: 5px;
+
+}
+
+
+
+.cardBox .card .iconBx {
+
+  font-size: 3.5rem;
+
+  color: var(--black2);
+
+}
+
+
+
+.cardBox .card:hover {
+
+  background: var(--blue);
+
+}
+
+.cardBox .card:hover .numbers,
+
+.cardBox .card:hover .cardName,
+
+.cardBox .card:hover .iconBx {
+
+  color: var(--white);
+
+}
+
+
+
+/* ================== Order Details List ============== */
+
+.details {
+
+  position: relative;
+
+  width: 100%;
+
+  padding: 20px;
+
+  display: grid;
+
+
+  grid-gap: 30px;
+
+  /* margin-top: 10px; */
+
+}
+
+
+
+.details .recentOrders {
+
+  position: relative;
+
+  display: grid;
+
+  min-height: 500px;
+
+  background: var(--white);
+flex:1;
+  padding: 20px;
+
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+
+  border-radius: 20px;
+
+}
+
+
+
+.details .cardHeader {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+
+}
+
+.cardHeader h2 {
+
+  font-weight: 600;
+
+  color: var(--blue);
+
+}
+
+.cardHeader .btn {
+
+  position: relative;
+
+  padding: 5px 10px;
+
+  background: var(--blue);
+
+  text-decoration: none;
+
+  color: var(--white);
+
+  border-radius: 6px;
+
+}
+
+
+
+.details table {
+
+  width: 100%;
+
+  border-collapse: collapse;
+
+  margin-top: 10px;
+
+}
+
+.details table thead td {
+
+  font-weight: 600;
+
+}
+
+.details .recentOrders table tr {
+
+  color: var(--black1);
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+}
+
+.details .recentOrders table tr:last-child {
+
+  border-bottom: none;
+
+}
+
+.details .recentOrders table tbody tr:hover {
+
+  background: var(--blue);
+
+  color: var(--white);
+
+}
+
+.details .recentOrders table tr td {
+
+  padding: 10px;
+
+}
+
+.details .recentOrders table tr td:last-child {
+
+  text-align: end;
+
+}
+
+.details .recentOrders table tr td:nth-child(2) {
+
+  text-align: end;
+
+}
+
+.details .recentOrders table tr td:nth-child(3) {
+
+  text-align: center;
+
+}
+
+.status.delivered {
+
+  padding: 2px 4px;
+
+  background: #8de02c;
+
+  color: var(--white);
+
+  border-radius: 4px;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+}
+
+.status.pending {
+
+  padding: 2px 4px;
+
+  background: #e9b10a;
+
+  color: var(--white);
+
+  border-radius: 4px;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+}
+
+.status.return {
+
+  padding: 2px 4px;
+
+  background: #f00;
+
+  color: var(--white);
+
+  border-radius: 4px;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+}
+
+.status.inProgress {
+
+  padding: 2px 4px;
+
+  background: #1795ce;
+
+  color: var(--white);
+
+  border-radius: 4px;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+}
+
+
+
+.recentCustomers {
+
+  position: relative;
+
+  display: grid;
+
+  min-height: 500px;
+
+  padding: 20px;
+
+  background: var(--white);
+
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+
+  border-radius: 20px;
+
+}
+
+.recentCustomers .imgBx {
+
+  position: relative;
+
+  width: 40px;
+
+  height: 40px;
+
+  border-radius: 50px;
+
+  overflow: hidden;
+
+}
+
+.recentCustomers .imgBx img {
+
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+}
+
+.recentCustomers table tr td {
+
+  padding: 12px 10px;
+
+}
+
+.recentCustomers table tr td h4 {
+
+  font-size: 16px;
+
+  font-weight: 500;
+
+  line-height: 1.2rem;
+
+}
+
+.recentCustomers table tr td h4 span {
+
+  font-size: 14px;
+
+  color: var(--black2);
+
+}
+
+.recentCustomers table tr:hover {
+
+  background: var(--blue);
+
+  color: var(--white);
+
+}
+
+.recentCustomers table tr:hover td h4 span {
+
+  color: var(--white);
+
+}
+/* ====================== Button add membership ========================== */
+.button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background: none;
+  width: 260px;
+  left: 20px;
+  height: 222px;
+  color: #0f1923;
+  cursor: pointer;
+  position: relative;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 104px;
+  transition: all .15s ease;
+  display: grid;
+}
+
+.button::before,
+.button::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: calc(50% - 5px);
+  border: 1px solid #7D8082;
+  transition: all .15s ease;
+}
+
+.button::before {
+  top: 0;
+  border-bottom-width: 0;
+}
+
+.button::after {
+  bottom: 0;
+  border-top-width: 0;
+}
+
+.button:active,
+.button:focus {
+  outline: none;
+}
+
+.button:active::before,
+.button:active::after {
+  right: 3px;
+  left: 3px;
+}
+
+.button:active::before {
+  top: 3px;
+}
+
+.button:active::after {
+  bottom: 3px;
+}
+
+.button_lg {
+  position: relative;
+  display: block;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #0f1923;
+  overflow: hidden;
+  box-shadow: inset 0px 0px 0px 1px transparent;
+}
+
+.button_lg::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  background-color: #0f1923;
+}
+
+.button_lg::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 4px;
+  height: 4px;
+  background-color: #0f1923;
+  transition: all .2s ease;
+}
+
+.button_sl {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: -1px;
+  left: -28px;
+  width: 0;
+  background-color: #ff4655;
+  transform: skew(-15deg);
+  transition: all .2s ease;
+}
+
+.button_text {
+  position: relative;
+}
+
+.button:hover {
+  color: #0f1923;
+}
+
+.button:hover .button_sl {
+  width: calc(100% + 80px);
+}
+
+.button:hover .button_lg::after {
+  background-color: #fff;
+}
+
+
+
+
+/* ====================== Responsive Design ========================== */
+@media (prefers-color-scheme: dark) {
+  body {
+    --blue: var(--dark-blue);
+    --white: var(--dark-white);
+    --gray: var(--dark-gray);
+    --black1: var(--dark-black1);
+    --black2: var(--dark-black2);
+  
+    background-color: var(--dark-gray);
+    color: var(--dark-white);
+  }
+}
+@media (max-width: 991px) {
+
+  .navigation {
+
+    left: -300px;
+
+  }
+
+  .navigation.active {
+
+    width: 300px;
+
+    left: 0;
+
+  }
+
+  .main {
+
+    width: 100%;
+
+    left: 0;
+
+  }
+
+  .main.active {
+
+    left: 300px;
+
+  }
+
+  .cardBox {
+
+    grid-template-columns: repeat(2, 1fr);
+
+  }
+
+}
+
+
+
+@media (max-width: 768px) {
+
+  .details {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .recentOrders {
+
+    overflow-x: auto;
+
+  }
+
+  .status.inProgress {
+
+    white-space: nowrap;
+
+  }
+
+}
+
+
+
+@media (max-width: 480px) {
+
+  .cardBox {
+
+    grid-template-columns: repeat(1, 1fr);
+
+  }
+
+  .cardHeader h2 {
+
+    font-size: 20px;
+
+  }
+
+  .user {
+
+    min-width: 40px;
+
+  }
+
+  .navigation {
+
+    width: 100%;
+
+    left: -100%;
+
+    z-index: 1000;
+
+  }
+
+  .navigation.active {
+
+    width: 100%;
+
+    left: 0;
+
+  }
+
+  .toggle {
+
+    z-index: 10001;
+
+  }
+
+  .main.active .toggle {
+
+    color: #fff;
+
+    position: fixed;
+
+    right: 0;
+
+    left: initial;
+
+  }
+
+}
